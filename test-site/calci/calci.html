@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>First Site</title>
+        <link href="styles/style.css" rel="stylesheet" type="text/css">
+<!--         <link href="styles/jquery-ui.css" rel="stylesheet" type="text/css">--> 
+        <link href="https://fonts.googleapis.com/css?family=Jura|Kreon" rel="stylesheet" tyep"text/css">
+        <script src="scripts/jquery-1.10.2.js"></script>
+        <script src="scripts/jquery-ui.js"></script>
+    </head>
+    <body>
+        <h1>Calculator</h1>
+        <img src="images/my-calci.png" alt='My Calculator Image'/>
+        <div id="num-input">
+            <center>
+                <label for="num-one">Number1</label>
+                <input id="num-one" type="number" min="1" step="0.1"/><br/><br/>
+                <label for="num-two">Number2</label>
+                <input id="num-two" type='number' min="1" step="0.1"><br/><br/>
+                <div id="accord">
+                    <h5 id="op">Arithmetic Operation</h5>
+                    <div id="opr">
+                    <ol>
+                        <li>Addition</li>
+                        <li>Subtraction</li>
+                        <li>Multiplication</li>
+                        <li>Division</li>
+                    </ol>
+                    </div>
+                    <h5 id="add">Addition</h5>
+                    <div id="a">
+                        <p></p>
+                    </div>
+                    <h5 id="sub">Subtraction</h5>
+                    <div id="s">
+                        <p></p>
+                    </div>
+                    <h5 id="mul">Multiplication</h5>
+                    <div id="m">
+                        <p></p>
+                    </div>
+                    <h5 id="div">Division</h5>
+                    <div id="d">
+                        <p></p>
+                    </div>
+                </div>
+            </center>
+        </div>        
+    </body>
+    <script src="scripts/main.js"></script>
+</html>

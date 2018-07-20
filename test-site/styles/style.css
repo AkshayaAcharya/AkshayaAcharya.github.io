@@ -1,0 +1,144 @@
+html{
+    background-color:rgb(20, 12, 94)
+}
+body{
+    width:800px;
+    margin:0 auto;
+    background-color:rgba(142, 241, 233, 0.712);
+    padding: 20px 20px 20px 20px;
+    border:5px solid black;
+    font-size:20px;
+    font-family: 'Kreon', serif;
+}
+h1{
+    text-align:center;
+    color:#04154e;
+    text-shadow:-5px 3px 1px rgb(67, 132, 134);
+}
+p{
+    color:rgba(58, 26, 4, 0.733);
+    line-height: 1.5;
+    letter-spacing:2px;
+}
+img{
+    display: block;
+    margin: 0 auto;
+}
+button{
+    width:120px;
+    height:30px;
+    color:rgb(3, 50, 51);
+}
+div #num-input{
+    display:block;
+    margin:0 auto;
+    margin-right:auto;
+    margin-left:auto;
+}
+h5{
+    background-color: rgba(29, 123, 247, 0.705);
+    width:170px;
+}
+h5:hover{
+    background-color: rgba(5, 43, 94, 0.705);
+}
+div #opr,#a,#s,#m,#d,#sp{
+    background-color: beige;
+    width:170px;
+}
+div #a,#s,#m,#d,#sp{
+    height:40px;
+    text-align: center;
+}
+div #sp #shape{
+    background-color: rgb(113, 164, 216);
+}
+#div-1{
+    display:block;
+    margin:0 auto;
+    background-color: #375fe0;
+    width:550px;
+    height:50px;
+    text-align:center;
+    border:solid black;
+    border-radius:20px; 
+}
+#div-1 h4{
+    padding:0px 5px 5px 5px;
+}
+#wrapper{
+  padding: 55px 75px 25px 150px;
+}
+#operation,#shapes{
+    display: inline-block;
+    border:2px solid black;
+    background-color: rgb(35, 182, 182);
+    width:250px;
+    height:250px;
+    border-radius: 25px;
+}
+#shapes:hover{
+    background-color: darkgrey;
+    cursor:pointer;
+}
+#operation:hover{
+    background-color: darkgrey;
+    cursor:pointer;
+}
+#display{
+    border:2px solid rgb(70, 55, 55);
+}
+#all-shapes{
+    padding: 55px 75px 25px 250px;
+}
+#tri,#cir,#sq,#rect{
+    display: inline-block;
+    border:2px solid black;
+    background-color: rgb(2, 83, 121);
+    width:150px;
+    height:150px;
+    border-radius: 25px;
+    cursor:pointer;
+}
+#tri{
+    background-image:url('../images/triangle.png');
+    background-repeat: no-repeat;
+    background-position:center;
+}
+#cir{
+    background-image:url('../images/circle.png');
+    background-repeat: no-repeat;
+    background-position:center; 
+}
+#sq{
+    background-image:url('../images/square.png');
+    background-repeat: no-repeat;
+    background-position:center;
+}
+#rect{
+    background-image:url('../images/rectangle.png');
+    background-repeat: no-repeat;
+    background-position:center;
+}
+.data
+{
+    display:none;
+    border:1px solid black;
+    width:300px;
+    height:100px;
+}
+.target{
+    display: block;
+    margin:0 auto;
+    width:20%;
+    height:170px;
+    border:1px solid black;
+}
+button{
+    width:50px;
+    cursor:pointer;
+}
+#canvas{
+    display:block;
+    margin:0 auto;
+}

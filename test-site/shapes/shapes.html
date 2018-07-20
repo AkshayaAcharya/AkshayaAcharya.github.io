@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link href="styles/style.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Jura|Kreon" rel="stylesheet" type="text/css">
+        <script src="scripts/jquery-1.10.2.js"></script>
+        <!--<script src="scripts/jquery-ui.js"></script>-->
+        <title>Shapes</title>
+    </head>
+    <body>
+        <div id="all-shapes">
+            <div id="tri" href="#tdata"></div>
+            <div id="cir" href="#cdata"></div>
+            <div id="sq" href="#sdata"></div>
+            <div id="rect" href="#rdata"></div>
+        </div>
+        <div class="target"></div>
+        <center>
+            <div class="data" id="tdata">
+                <label for="tb">Enter Base:</label><input type="number" id="tb" min="1" max="250" step="1"/>
+                <br>
+                <label for="th">Enter Height:</label><input type="number" id="th" min="1" max="250" step="1"/><br>
+                <label for="tc">Choose Color:</label><input id="tc" type="color" name="clr" value="#aaaaaa">
+                <button id="btn1">OK</button>
+            </div>
+            <div class="data" id="cdata">
+                <label for="cr">Enter Radius:</label><input type="number" id="cr" min="1" max="250" step="1"/>
+                <br>
+                <label for="cc">Choose Color:</label><input id="cc" type="color" name="clr" value="#aaaaaa">
+                <button id="btn2">OK</button>
+            </div>
+            <div class="data" id="sdata">
+                <label for="ss">Enter Side:</label><input type="number" id="ss" min="1" max="250" step="1"/>
+                <br>
+                <label for="sc">Choose Color:</label><input id="sc" type="color" name="clr" value="#aaaaaa">
+                <button id="btn3">OK</button>
+            </div>
+            <div class="data" id="rdata">
+                <label for="rl">Enter Length:</label><input type="number" id="rl" min="1" max="250" step="1"/>
+                <br>
+                <label for="rb">Enter Breadth:</label><input type="number" id="rb" min="1" max="250" step="1"/><br>
+                <label for="rc">Choose Color:</label><input id="rc" type="color" name="clr" value="#aaaaaa">
+                <button id="btn4">OK</button>
+            </div>
+        </center>
+        <canvas id="canvas" width="500px;" height="500px;"></canvas>
+    </body>
+    <script>
+        var canvas,ctx;
+        $(function()
+        {
+            $('.target').on('click','button',function()
+            {
+                var btnid = $(this).attr('id');
+                var canvaselem;
+                if(btnid=='btn1')
+                {
+                    $('.target').hide();
+                    drawTriangle($('#tb').val(),$('#th').val(),$('#tc').val());
+                }
+                if(btnid=='btn2')
+                {
+                    $('.target').hide();
+                    drawCircle($('#cr').val(),$('#cc').val());
+                }
+                if(btnid=='btn3')
+                {
+                    $('.target').hide();
+                    drawSquare($('#ss').val(),$('#sc').val());
+                }
+                if(btnid=='btn4')
+                {
+                    $('.target').hide();
+                    drawRectangle($('#rl').val(),$('#rb').val(),$('#rc').val());
+                }
+            });
+            $('#all-shapes').on('click','div',function()
+            {
+                var divid = $(this).attr('href');
+                var elem = $(''+divid).html();
+                $('.target').show();
+                $('.target').html(elem);
+                $('html,body').animate({
+                        scrollTop: $('.target').offset().top},
+                    'slow');
+            });
+            $('#all-shapes').on('click',function()
+            {
+                canvasClear();
+            });
+        });
+        function canvasClear()
+        {
+            canvas = document.getElementById('canvas');
+            ctx = canvas.getContext('2d');
+            ctx.clearRect(0,0,500,500);
+        }
+        function drawTriangle(base,height,color){
+            ctx.clearRect(0,0,500,500);
+            ctx.beginPath();
+            var sWidth = canvas.width;
+            var sHeight = canvas.height;
+            ctx.fillStyle=color;
+            ctx.moveTo((sWidth/2)+ +base,sHeight/2);//Right bottom
+            ctx.lineTo((sWidth/2),(sHeight/2)- +height);//middle top
+            ctx.lineTo((sWidth/2)- +base,sHeight/2);//left bottom
+            ctx.lineTo((sWidth/2)+ +base,sHeight/2);//base
+            ctx.fill();
+        }
+        function drawCircle(radius,color){
+            ctx.clearRect(0,0,500,500);
+            ctx.beginPath();
+            ctx.fillStyle=color;
+            ctx.arc(canvas.width/2,canvas.height/2,radius,0,2*Math.PI,true);
+            ctx.fill();
+        }
+        function drawSquare(side,color){
+            ctx.clearRect(0,0,500,500);
+            ctx.beginPath();
+            ctx.fillStyle=color;
+            ctx.rect(canvas.width/2-15,canvas.height/2-50,side,side);
+            ctx.fill();
+        }
+        function drawRectangle(length,breadth,color){
+            ctx.clearRect(0,0,500,500);
+            ctx.beginPath();
+            ctx.fillStyle=color;
+            ctx.rect(canvas.width/2-15,canvas.height/2-50,length,breadth);
+            ctx.fill();
+        }
+    </script>
+</html>
