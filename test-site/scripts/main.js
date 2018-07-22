@@ -26,11 +26,11 @@ $(function()
         var divId=$(this).attr('id');
         if(divId == 'operation')
         {
-            $('#display').load('calci/calci.html');
+            $('#display').load('test-site/calci/calci.html');
         }
         if(divId == 'shapes')
         {
-            $('#display').load('shapes/shapes.html');
+            $('#display').load('test-site/shapes/shapes.html');
         }
     });
 });
